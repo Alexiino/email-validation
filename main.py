@@ -114,10 +114,11 @@ def process_txt(input_file):
     st.dataframe(result_df)
 
 def main():
+            PORT = 8501
+    st.set_option('server.port', PORT)
     with open('style.css') as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-        PORT = 8501
-    st.set_option('server.port', PORT)
+
     st.title("Email Verification Tool", help="This tool verifies the validity of an email address.")
     st.info("The result may not be accurate. However, it has 90% accuracy.")
 
